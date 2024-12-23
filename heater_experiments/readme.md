@@ -2,18 +2,22 @@
 
 The single heater system discrete-time state-space representation is:
 
-$\begin{align}
-x(t+1)=&\left[\begin{array}{cc}
+$$
+\begin{align}
+x(t+1) &= \begin{bmatrix}
 0 & -0.0005 \\
-1 & -0.0965 
-\end{array}\right] x(t)+\left[\begin{array}{c}
+1 & -0.0965
+\end{bmatrix} x(t) +
+\begin{bmatrix}
 0.0004 \\
 -0.00
-\end{array}\right] u(t), \nonumber\\
-y(t)=&\left[\begin{array}{ll}
+\end{bmatrix} u(t), \\
+y(t) &= \begin{bmatrix}
 0 & 1
-\end{array}\right] x(t)+T_{amb.}, \nonumber\\
-\end{align}$
+\end{bmatrix} x(t) + T_{amb.},
+\end{align}
+$$
+
 
 where $T_{amb.}$ is ambient temperature.
 

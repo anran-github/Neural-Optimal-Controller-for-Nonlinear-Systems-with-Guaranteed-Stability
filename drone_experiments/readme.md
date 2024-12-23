@@ -2,7 +2,7 @@
 
 
 ## Drone Simulation
-Provide for reference. 
+Those are some good simulation references in case you don't have hardware but still want to comapre your control law with our method: 
 ## 
 
     MATLAB/drone_simulation_random_point.m
