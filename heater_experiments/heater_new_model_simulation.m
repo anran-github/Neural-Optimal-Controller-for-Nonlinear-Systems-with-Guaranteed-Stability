@@ -1,6 +1,16 @@
 close all
 clear all
 
+% ==========================================
+%         Heater System Simulation
+% Note: The simulation results are a little
+%       different from hardware experiments
+% 
+% Given control laws: LQR, Multi-Agent,
+%                     Neural Controller
+% ==========================================
+
+
 % ===============SS MODEL and Observer settings===========================
 % give canonical form of matrices:
 % These values come from "heater_new_model.m": 
@@ -79,10 +89,10 @@ for k = 1:N
     % different control laws for discrete-time system: 
     
     % LQR
-    % u = -K * xt +G*desired_t;
+    u = -K * xt +G*desired_t;
 
-    % YALMIP
-    [u,P,theta] = multi_agent_algorithm(xt,xr,A_d,B_d,R,Q,K,G)
+    % Mutil-Agent: time-consuming
+    % [u,P,theta] = multi_agent_algorithm(xt,xr,A_d,B_d,R,Q,K,G)
     
     % NN MODEL
     % data_input = [xt(1),xt(2),xr(2)];
@@ -159,4 +169,4 @@ grid("on");
 xlabel('Time [s]');
 ylabel('Control input u');
 title('Control input u');
-exportgraphics(gcf, 'heater_res.png', 'Resolution', 300);
+% exportgraphics(gcf, 'heater_res.png', 'Resolution', 300);
